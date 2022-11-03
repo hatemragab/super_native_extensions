@@ -8,8 +8,8 @@ import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:super_clipboard/super_clipboard.dart';
-import 'package:super_drag_and_drop/super_drag_and_drop.dart';
 import 'package:super_clipboard_example/widget_for_reader.dart';
+import 'package:super_drag_and_drop/super_drag_and_drop.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -88,7 +88,9 @@ class _DragableWidgetState extends State<DragableWidget> {
   @override
   Widget build(BuildContext context) {
     return DragItemWidget(
-      allowedOperations: () => [DropOperation.copy],
+      allowedOperations: () => [
+        DropOperation.copy,
+      ],
       canAddItemToExistingSession: true,
       dragItemProvider: provideDragItem,
       child: DraggableWidget(
